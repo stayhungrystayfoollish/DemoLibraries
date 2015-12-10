@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>padding等高布局</title>
+	<style type="text/css">
+		.main{
+			overflow: hidden;
+		}
+		.left{
+			width:300px;
+			float:left;
+			padding-bottom: 2000px;
+			margin-bottom: -2000px;
+			background-color: red;
+		}
+		.right{
+			margin-left:300px;
+			padding-bottom: 2000px;
+			margin-bottom: -2000px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="left">左侧内容</div>
+		<div class="right">右侧内容
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+		</div>
+	</div>
+	<p>另外可以使用table来实现等高布局</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flex等高布局</title>
+	<style type="text/css">
+		.main{
+			overflow: hidden;
+			display: flex;
+		}
+		.left{
+			width:300px;
+			background-color: red;
+		}
+		.right{
+			background-color: green;
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="left">左侧内容</div>
+		<div class="right">右侧内容
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+		</div>
+	</div>
+</body>
+</html>
