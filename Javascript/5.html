@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>未来模块机制</title>
+	<script type="text/javascript">
+		//bar.js
+		function hello(who){
+			return "let me introduce:" + who;
+		}
+
+		export hello;
+
+		//foo.js
+		import hellp from "bar";
+
+		var hungry = 'hippo';
+		function awesome(){
+			console.log(
+				hello(hungry).toUpperCase()
+				);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>模块-1</title>
+	<script type="text/javascript">
+		function MyModule(){
+			var name = 'terry';
+			var age = 20;
+
+			return {
+				getName: function(){
+					console.log(name);
+				},
+				getAge: function(){
+					console.log(age);
+				}
+			}
+		}
+
+		var module = new MyModule();
+		module.getName();
+		module.getAge();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

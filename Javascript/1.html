@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>闭包</title>
+	<script type="text/javascript">
+		for(var i = 0; i < 5; i++){
+			(function(){
+				var j = i;
+				setTimeout(function(){
+					console.log(j);
+				}, 1000);
+			}());
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

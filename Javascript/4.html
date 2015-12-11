@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>现代模块机制</title>
+	<script type="text/javascript">
+		var myModules = (function Manager(){
+			var modules = {};
+
+			/**
+			 * [define description]
+			 * @param  字符串 name 模块名称
+			 * @param  数组 deps 依赖项
+			 * @param  实现 impl 模块实现
+			 * @return {[type]}      [description]
+			 */
+			 function define(name, deps, impl){
+			 	for(var i = 0; i < deps.length; i++){
+			 		deps[i] = modules[deps[i]];
+			 	}
+			 	modules[name] = impl.apply(impl, deps);
+			 }
+
+			 function get(name){
+			 	return modules[name];
+			 }
+
+			 return {
+			 	define:define,
+			 	get:get
+			 }
+			}());
+
+		myModules.define("bar", [], function(){
+			function hello(who){
+				return "Let me introduce:" + who; 
+			}
+			return {
+				hello: hello
+			}
+		});
+
+		myModules.define("foo", ["bar"], function(){
+			var hungry = "hipppo";
+
+			function awesome(){
+				console.log(bar.hello(hungry).toUpperCase());
+			}
+
+			return {
+				awesome:awesome
+			}
+		});
+
+		var bar = myModules.get("bar");
+		var foo = myModules.get("foo");
+
+		foo.awesome();
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
