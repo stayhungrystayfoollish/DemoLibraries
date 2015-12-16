@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>立即执行函数</title>
+	<script type="text/javascript">
+	//立即执行函数不污染全局空间
+	var a = 1;
+	(function(global){
+		var a = 2;
+		global.b = {
+			name: 'terry',
+			age: 20 
+		};
+		console.log("inner:" + a);
+		console.log("global:" + global.a);
+	}(this));
+	console.log("outer:" + a);
+	console.log(b);
+
+	//立即函数的返回值
+	var myModule = (function(){
+		var myObj = {
+			name: 'terryQuery',
+			age: 25,
+			getAddress: function(){}
+		};
+		return myObj;
+	}());
+	console.log(myModule.name);
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

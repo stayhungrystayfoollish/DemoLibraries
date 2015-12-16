@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>apply 用法</title>
+	<script type="text/javascript">
+		var myArray = [1, 2, 5, 3];
+		var max = Math.max.apply(null, myArray);
+		var min = Math.min.apply(null, myArray);
+
+		console.log(max);
+		console.log(min);
+
+		function Person(name, age){
+			this.name = name;  
+			this.age = age;
+			this.getName = function(){
+				console.log(name);
+			};
+		}
+
+		function Student(name, age, grade){
+			Person.apply(this, arguments);
+			this.grade = grade;
+		}
+
+		var p1 = new Person('terry');
+		var p2 = new Person('tom');
+		var s1 = new Student("terrychen", 25, "Dell");
+
+		p1.getName();
+		p1.getName.apply();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

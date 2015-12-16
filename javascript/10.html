@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>继承多种方式</title>
+	<script type="text/javascript">
+		function Parent(){
+			this.name = 'terry'
+		}
+
+		//1. 经典模式，子类获得引用，prototype属性
+		function Child(){
+			this.age = 25;
+		}
+		//Child.prototype = new Parent();
+		var parent = new Parent();
+		Child.prototype = parent;
+
+		var child = new Child();
+		parent.name = 'test';
+		console.log(child.name);
+
+		//2.构造函数apply方式
+		function SecondChild(){
+			Parent.apply(this);//只要实例化Child对象，都会继承Parent对象，子对象将获得继承成员的拷贝
+			this.age = 25;
+		}
+
+		var secondChild = new SecondChild();
+		console.log(secondChild.name);
+
+		Parent.prototype.getAddress = function(){ console.log("address") }; //不会继承Parent的prototype原型对象
+		var proSecondChild = new SecondChild();
+
+		//3.构造函数并且设置原型，获得拷贝和引用
+		function ThirdChild(){
+			Parent.apply(this);
+			this.age = 25;
+		}
+		ThirdChild.prototype = new Parent();
+		var thirdChild = new ThirdChild()
+		thirdChild.getAddress();
+
+		//4.共享原型，其中一个子类或者父类改变会影响全部
+		function FourthChild(){
+			this.age = 25;
+		} 
+		FourthChild.prototype = Parent.prototype;
+
+		//5.临时构造函数
+		function FifthChild(){
+		    this.age = 25;
+		}
+		var tempFun = function(){};
+		tempFun.prototype = Parent.prototype;
+		FifthChild.prototype = new tempFun();
+
+		var fifthChild = new FifthChild();
+
+		//6.原型继承
+		var parent = {
+			name: "terry"
+		};
+		function object(o) {
+    		function F() {}
+    		F.prototype = o;
+    		return new F();
+		}
+		var sixthChild = object(parent);
+		console.log(sixthChild.name);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

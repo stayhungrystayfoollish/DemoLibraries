@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>定义类</title>
+	<script type="text/javascript">
+		//字面向量方式，没有prototype对象
+		var person = {
+			name : "terry",
+			getAge : function(age){
+				console.log(age);
+			}
+		}
+		person.getAge(20);
+
+		//使用函数
+		function Apple (type) {
+		    this.type = type;
+		    this.color = "red";
+		    this.getInfo = function() {
+		        console.log(this.color + ' ' + this.type + ' apple');
+		    };
+		}
+		var apple = new Apple('good');
+		apple.getInfo();
+
+		//使用函数 + prototype对象
+		function MyApple (type) {
+		    this.type = type;
+		    this.color = "red";
+		}
+		MyApple.prototype.getInfo = function(){
+			console.log(this.color + ' ' + this.type + ' apple');
+		}
+		var myApple = new Apple('bad');
+		myApple.getInfo();
+
+		//使用单例函数
+		var yourApple = new function() {
+		    this.type = "macintosh";
+		    this.color = "red";
+		    this.getInfo = function () {
+		        console.log(this.color + ' ' + this.type + ' apple');
+		    };
+		}
+		yourApple.getInfo();
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

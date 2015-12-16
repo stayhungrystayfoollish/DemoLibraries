@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this 用法</title>
+	<script type="text/javascript">
+		function test1(){
+			this.x = 1;//this就是全局对象
+			console.log(this.x);
+		}
+		test1(); 
+
+		//作为对象方法调用，指的是o对象
+		function test2(){
+			console.log(this.x);
+		}
+		var o = {};
+		o.x = 1;
+		o.m = test2;
+		o.m();
+
+		//作为构造函数调用
+		function test3(){
+			this.x = 1; //this指的是o
+		}
+		var o = new test3();
+　　	console.log(o.x); 
+		
+		//apply调用，谁调用指谁
+///////////////////////////////////////////////
+		var stuName = 'test1'
+		function Student(){
+			this.stuName = 'test2';
+			console.log(stuName);
+		}
+		Student();//直接调用函数，this.stuName中this指的是window，覆盖变量，结果为test2
+		var s = new Student();//new对象，this.stuName中this指向s对象，结果为test1
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

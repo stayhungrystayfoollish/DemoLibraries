@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>继承</title>
+	<script type="text/javascript">
+		function Person(name){
+			this.name = name;
+			console.log(name);
+		}
+		Person.prototype.age = 20;
+
+		var p1 = new Person('terry');
+		var p2 = new Person('tom');
+
+		p1.address = function(){}
+
+		console.log(p1.hasOwnProperty('name'));
+		console.log(p1.hasOwnProperty('age'));
+		console.log(p1.hasOwnProperty('address'));
+
+		console.log(p1.age);
+		p1.age = 15;
+		console.log(p1.age);
+
+		Person.prototype.age = 18;
+		
+		console.log(p1.age);
+		console.log(p2.age);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
