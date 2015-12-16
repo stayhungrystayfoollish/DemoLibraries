@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>padding等高布局</title>
+	<title>Flex等高布局</title>
 	<style type="text/css">
 		.main{
 			overflow: hidden;
+			display: flex;
 		}
 		.siderbar{
 			width:300px;
-			float:left;
-			padding-bottom: 2000px;
-			margin-bottom: -2000px;
 			background-color: red;
 		}
 		.content{
-			margin-left:300px;
-			padding-bottom: 2000px;
-			margin-bottom: -2000px;
 			background-color: green;
+			flex: 1;
 		}
 	</style>
 </head>
@@ -34,6 +30,5 @@
 			<p>无限内容</p>
 		</div>
 	</div>
-	<p>另外可以使用table来实现等高布局</p>
 </body>
 </html>

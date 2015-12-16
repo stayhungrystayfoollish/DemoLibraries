@@ -1,39 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>padding等高布局</title>
+	<title>右侧固定宽, 左侧自适应屏幕宽</title>
 	<style type="text/css">
-		.main{
-			overflow: hidden;
-		}
-		.left{
+		.siderbar{
+			float:right;
 			width:300px;
-			float:left;
-			padding-bottom: 2000px;
-			margin-bottom: -2000px;
-			background-color: red;
+			min-height:200px;
 		}
-		.right{
-			margin-left:300px;
-			padding-bottom: 2000px;
-			margin-bottom: -2000px;
+		.content{
 			background-color: green;
+			margin-right:300px;
+			min-height:200px;
+			background-color: red;
 		}
 	</style>
 </head>
 <body>
-	<div class="main">
-		<div class="left">左侧内容</div>
-		<div class="right">右侧内容
-			<p>无限内容</p>
-			<p>无限内容</p>
-			<p>无限内容</p>
-			<p>无限内容</p>
-			<p>无限内容</p>
-			<p>无限内容</p>
-			<p>无限内容</p>
-		</div>
-	</div>
-	<p>另外可以使用table来实现等高布局</p>
+	<div class="siderbar">右侧固定款</div>
+	<div class="content">左侧自适应屏幕</div>	
 </body>
 </html>

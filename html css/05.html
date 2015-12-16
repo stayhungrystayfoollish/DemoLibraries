@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>左右两侧固定，中间内容自适应</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		#header{
+			height:120px;
+			background: #F00;
+		}
+
+		#main{
+			position: relative;
+		}
+
+		.left{
+			position: absolute;
+			width:150px;
+			background-color: black;
+			left:0;
+			top:0;
+			height:100%;
+		}
+		.content{
+			background-color: orange;
+			margin:0 150px;
+			height:100%;
+		}
+		.right{
+			position: absolute;
+			width:150px;
+			background-color: blue;
+			top:0;
+			right:0;
+			height:100%;
+		}
+		#footer{
+			background-color: yellow; 
+			height:100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		header
+	</div>
+	<div id="main">
+		<div class="left">left</div>
+		<div class="content">
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+			<p>无限内容</p>
+		</div>
+		<div class="right">right</div>
+	</div>
+	<div id="footer">footer</div>
+</body>
+</html>
