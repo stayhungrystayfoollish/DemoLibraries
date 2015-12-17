@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>瀑布布局</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		#main{
+			width:802px;
+			margin:50px auto 0 auto;
+			overflow: hidden;
+		}
+		.list{
+			width: 200px;
+			margin-right:5px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.list div{
+			min-height:100px;
+			margin-bottom: 5px;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+	<div class="list">
+		<div style="height:300px;">1</div>
+		<div style="height:180px;">2</div>
+		<div style="height:150px;">3</div>
+	</div>
+	<div class="list">
+		<div style="height:250px;">4</div>
+		<div style="height:180px;">5</div>
+		<div style="height:250px;">6</div>
+	</div>
+	<div class="list">
+		<div style="height:200px;">7</div>
+		<div style="height:180px;">8</div>
+		<div style="height:150px;">9</div>
+	</div>
+</div>
+</body>
+</html>

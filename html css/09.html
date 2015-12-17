@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三列布局-2</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		html, body{height: 100%;}
+		#main{
+			overflow: hidden;
+			height: 100%;
+			position: relative;
+		}
+		.left{
+			background: orange;
+			width: 200px;
+			position: absolute;
+			left:0;
+			top:0;
+			height:100%;
+		}
+		.center{
+			background: red;
+			margin:0 150px 0 200px;
+			padding:0 10px;
+			height:100%;
+		}
+		.right{
+			background: orange;
+			width:150px;
+			position: absolute;
+			right:0;
+			top:0;
+			height:100%;
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+	<div class="left">
+		left
+	</div>
+	<div class="center">
+		center
+	</div>
+	<div class="right">
+		right
+	</div>
+</div>
+</body>
+</html>
