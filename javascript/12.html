@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拷贝</title>
+	<script type="text/javascript">
+		var person = { 
+			name: 'terry', 
+			age: 25
+		};
+		var p1 = person; //浅拷贝，复制引用指向同一个对象
+		var p2 = deepCopy(person); //深拷贝，创建新地址
+
+		//jquery
+		var p3 = $.extend({}, person);       //浅拷贝
+	    var p4 = $.extend(true, {}, person); //深拷贝
+
+	    //json全局对象
+	    var p4 = JSON.parse(JSON.stringify(person));
+</script>
+</head>
+<body>
+
+</body>
+</html>

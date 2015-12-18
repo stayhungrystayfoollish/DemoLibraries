@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>统计字符串出现字母次数最多的</title>
+	<script type="text/javascript">
+		var dict = {};
+		var address = "tang jia of zhu hai in China";
+		for(var i = 0;i < address.length; i++){
+			if(address[i] != ' '){
+				if(Object.keys(dict).indexOf(address[i]) == -1){
+					dict[address[i]] = 1;
+				} else {
+					dict[address[i]] += 1;
+				}
+			}
+		}
+		console.log(dict);
+	</script>
+</head>
+<body>
+</body>
+</html>
